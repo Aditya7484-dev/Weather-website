@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App Website</title>
+  <link rel="stylesheet" href="WeatherApp.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="container">
+    <div class="search-box">
+      <i class='bx bxs-map search'></i>
+      <input type="text" placeholder="Enter Your location" id="location-input">
+      <button class="search"><i class='bx bx-search'></i></i></button>
+    </div>
+
+    <div class="weather-box">
+      <div class="box">
+        <div class="info-Weather">
+          <div class="weather">
+            <img src="/images/cloud.png">
+            <p class="temp">16<span>°C</span></p>
+            <p class="condition">Broken Cloud</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-detail">
+
+      <div class="humidity">
+        <i class='bx bx-water'></i>
+        <div class="text">
+          <div class="info-humidity">
+            <span>0%</span>
+            <p>Humidity</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wind-detail">
+        <i class='bx bx-wind'></i>
+        <div class="text">
+          <div class="info-wind">
+            <span>0km/h</span>
+            <p>Wind Speed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="WeatherApp.js"></script>
+</body>
+</html>
