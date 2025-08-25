@@ -14,6 +14,7 @@ body {
   background-size: cover;
   background-position: center;
 }
+
 .container {
   position: relative;
   height: 100px;
@@ -22,22 +23,18 @@ body {
   border-radius: 16px;
   backdrop-filter: blur(30px);
   color: antiquewhite;
+  overflow: hidden;
   transition: height 2s ease;
 }
-.search-box i {
-  position: relative;
-  left: 10px;
-  font-size: 28px;
-  color: antiquewhite;
-}
-.search-box {
+
+.search-box{
   position: relative;
   width: 100%;
   height: 55px;
   display: flex;
   align-items: center;
 }
-.search-box input {
+.search-box input{
   position: absolute;
   width: 77%;
   height: 100%;
@@ -55,19 +52,29 @@ body {
   color: #fff;
   text-transform: capitalize;
 }
-.search-box button {
+.map-icon{
   position: absolute;
-  right: 0;
-  background: transparent;
-  outline: none;
-  border: none;
-  font-size: 30px;
-  width: 40px;
-  height: 100%;
-  color: antiquewhite;
-  padding: 0 40px 0 5px;
+  left: 0;
+  margin-right: 10px;
+  top: 13px;
   cursor: pointer;
 }
+.search-icon{
+  position: absolute;
+  right: 0;
+  top: 13px;
+  cursor: pointer;
+}
+.search-box button{
+  background:transparent;
+  border: none;
+}
+.search-box i {
+  position: relative;
+  font-size: 28px;
+  color: antiquewhite;
+}
+
 .weather-box{
   margin: 40px 0;
   justify-content: center;
@@ -81,10 +88,30 @@ body {
 .weather-box.active,
 .weather-detail.active,
 .notFound.active{
+  overflow: hidden;
   visibility: visible;
+}
+.weather-box .box,
+.notFound .box{
+  transform:translateY(-100%);
+}
+.weather-box.active .box,
+.notFound.active .box{
+  transform:translateY(0%);
+  transition: transform 1s ease;
+  transition-delay:.6s;
 }
 .weather-box img{
   width: 60%;
+}
+.weather-box .box .info-weather{
+  transform: translateY(-120%);
+}
+.container.active .weather-box .box .info-weather
+.container.active .weather-detail .humidity .info-humidity,
+.container.active .weather-detail .wind-detail .info-wind{
+  transform: translateY(0%);
+  transition: transform 1s ease;
 }
 .weather-box .temp{
   font-size: 60px;
@@ -114,7 +141,14 @@ body {
   display: flex;
   align-items: center;
   width: 50%;
+  transform: translateY(-100%);
 }
+.weather-detail.active .humidity,
+.weather-detail.active .wind-detail{
+  transform: translateY(0%);
+  transition: transform 1s ease;
+  transition-delay: 1.2s;
+} 
 .weather-detail i{
   font-size: 56px;
   margin-right: 10px;
@@ -142,4 +176,7 @@ body {
   font-size: 18px;
   font-weight: 500;
   margin-top: 10px;
+}
+.city-hide{
+  display: none;
 }
